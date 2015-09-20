@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			/*
+				Daniel Canales
+				September 14th, 2015
+				Assignment 1: Ternary Operator
+			*/
+		</script>
+		<meta charset="utf-8">
+		<title>Assignment 1</title>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			//start
+			var score = prompt("What is your score");
+			var grade;
+			
+			//output grades based on score using ternary operator '?'
+			grade = score <  0 ? grade = "Not possible":
+					score < 60 ? grade = "an F" :
+					score < 70 ? grade = "a D" :
+					score < 80 ? grade = "a C" :
+					score < 90 ? grade = "a B" :
+					score <= 100 ? grade = "an A" :
+											"Not a possible score"; // "else" not a possible
+											
+			//output result
+			document.write("Your grade is " + score + " " + grade);
+			
+		</script>
+	</body>
+</html>
