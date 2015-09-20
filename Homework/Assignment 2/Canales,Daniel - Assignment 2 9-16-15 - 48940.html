@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			/*
+				Daniel Canales
+				September 14th, 2015
+				Assignment 2: Payroll
+			*/
+		</script>
+		<meta charset="utf-8">
+		<title> Assignment 2:Payroll </title>
+	</head> 
+	
+	<body>
+		<script type= "text/javascript"> 
+			var hours;
+			var rate;
+			var total;
+			
+			hours = prompt("How many hours did you work");
+			rate =  prompt("What is your payrate");
+			
+			document.write("You worked " + hours + " hours <br>");
+			document.write("Your payrate is $" + rate + " an hour <br>");
+			
+			if(hours <= 20){
+				total = hours*rate;
+				document.write("You made $" + total);
+			}
+			
+			else if((hours > 20) && (hours <=40)){
+				total = 20*rate;
+				hours = hours - 20;
+				total += hours*(2*rate);
+				
+				document.write("You made $" + total);
+			}
+			
+			else if(hours > 40){
+				total = (20*rate)+(20*(2*rate));
+				hours = hours - 40;
+				total += hours*(3*rate);
+				
+				document.write("You made $" + total);
+			}
+					
+		</script>
+	</body>
+</html>
