@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script>
+                /*
+                    Daniel Canales
+                    9/27/15
+                    ASSIGNMENT
+                */           
+        </script>
+        <meta charset="utf-8">
+        <title>Assignment 4</title>
+    </head>
+	
+	<body>
+            <table width="400" border ="1">
+                <tr> 
+                    <th> Hours </th>
+                    <th> Pay w/OT </th>
+                    <th> Pay w/o OT </th>
+                    <th> 10% Tax </th>
+                    <th> Net Pay </th>
+                </tr>
+                
+            <script> //dont need a script type
+            //Start here
+                var pay = prompt("What is your pay per hour");
+                
+                var total = [];             //create array to place total in
+                for(var i=0; i<=72; i++){   //loop to create array amount and
+                    total[i] = pay*i;       //place total in
+                }
+                
+                var totalOt = [];         //total with overtime
+                for(var i=0; i<=72;i++){
+                    totalOt[i] = pay*i;
+                    
+                    if(i>20 && i<40){
+                        var hours = i-20;
+                        totalOt[i] = pay*20;
+                        totalOt[i] += (2*pay)*hours;
+                    }
+                           
+                    if(i>=40){
+                        var hours = i-40;
+                        totalOt[i] = (20*pay);
+                        totalOt[i] += (3*pay)*hours;
+                    }
+                }
+                    
+                
+                //loop to get hours
+                for(var i=0; i<=72; i++){
+                   
+                    document.write("<tr>");
+                    
+                    document.write("<td>" + i + "</td>");           //hour colums
+                    document.write("<td>" + totalOt[i] + "</td>");  //pay w/ot
+                    document.write("<td>" + total[i] + "</td>");    //pay w/o OT
+                    document.write("<td>" + (total[i]*.1) +"</td>"); //10%
+                    document.write("<td>" + (totalOt[i]-(totalOt[i]*.1)) +"</td>");
+                    document.write("</tr>");
+                }
+                
+               
+		
+             
+                
+            //end here
+            </script>
+            </table>
+	</body>
+</html>
